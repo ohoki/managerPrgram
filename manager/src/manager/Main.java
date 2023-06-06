@@ -8,9 +8,9 @@ public class Main {
 		MemberService memberService = new MemberService(memberDao);
 		
 		//C
-		MemberVo vo1 = new MemberVo(1, "test1", "1234", "nick1");
-		MemberVo vo2 = new MemberVo(2, "test2", "1234", "nick2");
-		MemberVo vo3 = new MemberVo(3, "test3", "1234", "nick3");
+		MemberVo vo1 = new MemberVo(1,"test11", "1234", "nick1");
+		MemberVo vo2 = new MemberVo(2,"test22", "1234", "nick2");
+		MemberVo vo3 = new MemberVo(3,"test33", "1234", "nick3");
 		
 		memberService.regist(vo1);
 		memberService.regist(vo2);
@@ -25,12 +25,12 @@ public class Main {
 		System.out.println("전체조회 완료!");
 		
 		MemberVo vo = null;
-		vo = memberService.read(1);
+		vo = memberService.read(4);
 		System.out.println(vo);
 		System.out.println("조회 완료!");
 		
 		//U
-		vo = memberService.read(1);
+		vo = memberService.read(5);
 		System.out.println(vo);
 		
 		if(vo != null) {
@@ -41,7 +41,7 @@ public class Main {
 		System.out.println("수정완료!!");
 		
 		//D
-		memberService.remove(2);
+		memberService.remove(6);
 		ls = memberService.listAll();
 		for(MemberVo tmp : ls) {
 			System.out.println(tmp);

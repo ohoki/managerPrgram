@@ -6,4 +6,5 @@
  *
  */
 module manager {
+	requires java.sql;
 }
