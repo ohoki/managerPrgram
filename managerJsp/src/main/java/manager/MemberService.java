@@ -29,12 +29,20 @@ public class MemberService {
 	}
 	
 	//수정
-	public void edit(MemberVo vo) {
-		memberDao.updateMember(vo);
+	public boolean edit(MemberVo vo, String memberPwOld) {
+		int result = -1;
+		MemberVo searchMember = memberDao.selectMember(vo.getNum());
+		
+		if(searchMember.getMemberPw().equals(memberPwOld)) {
+			result = memberDao.updateMember(vo);
+		}
+		return (result == 1) ? true : false;
 	}
 	
 	//탈퇴
-	public void remove(int num) {
-		memberDao.deleteMember(num);
+	public boolean remove(int num) {
+		boolean result = false;
+		int ret = memberDao.deleteMember(num);
+		return (ret == 1) ? true : false;
 	}
 }

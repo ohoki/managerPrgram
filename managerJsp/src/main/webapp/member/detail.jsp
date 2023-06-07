@@ -24,8 +24,8 @@
 		아이디 : <%= vo.getMemberId() %><br>
 		닉네임 : <%= vo.getNickName() %><br>
 		등록일 : <%= vo.getRegdate() %><br>
-		<a href="#"><button>수정</button></a>
-		<a href="#"><button>삭제</button></a>
+		<a href="modifyForm.jsp?num=<%=vo.getNum()%>"><button>수정</button></a>
+		<a href="deleteForm.jsp?num=<%=vo.getNum()%>"><button>삭제</button></a>
 	<% } %>		
 </body>
 </html>
